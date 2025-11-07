@@ -23,7 +23,7 @@ body{
 }
 
 @mixin Cards($img:""){
-    width: 100%;
+            width: 100%;
             background-image: url($img);
             aspect-ratio: 1/1;
             background-size: cover;
@@ -59,6 +59,18 @@ body{
                     text-transform: uppercase;
                 }
             }
+}
+
+@mixin img($img:"", $pos:center){
+            width: 100%;
+            height: 100%;
+            background-image: url($img);
+            aspect-ratio: 1/1;
+            background-size: cover;
+            background-position: $pos;
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            flex-grow: 1;
 }
 
 section{
@@ -506,6 +518,80 @@ main{
         }
         
         
+    }
+    section.container{
+        width: 100%;
+        height: 100vh;
+        padding: 1rem;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(12,40%);
+        grid-auto-flow: dense;
+        grid-template-areas:    "sec1 sec1 sec2 sec2"
+                                "sec3 sec3 sec2 sec2"
+                                "sec4 sec4 sec5 sec5"
+                                "sec4 sec4 sec6 sec6"
+                                "sec7 sec7 sec7 sec7"
+                                "sec7 sec7 sec7 sec7"
+                                "sec8 sec8 sec8 sec8"
+                                "sec8 sec8 sec8 sec8"
+                                "sec9 sec9 sec9 sec9"
+                                "sec9 sec9 sec9 sec9"
+                                "sec10 sec10 sec10 sec10"
+                                "sec10 sec10 sec10 sec10"
+        ;
+        
+        section.sec1{
+            @include img("https://images.unsplash.com/photo-1518893883800-45cd0954574b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=734" , );
+            grid-area: sec1;
+            background-color: red;
+        }
+        section.sec2{
+            @include img("https://i.pinimg.com/736x/25/6a/59/256a59327a2f708bc84ddbfcd0e8c6d5.jpg", );
+            background-color: blue;
+            grid-area: sec2;
+        }
+        section.sec3{
+            @include img("https://images.unsplash.com/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGFudGlxdWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600", );
+            grid-area: sec3;
+            background-color: green;
+        }
+        section.sec4{
+            @include img("https://images.unsplash.com/photo-1620513751421-a6e6b5cb6082?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fGFudGlxdWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600", );
+            background-color: orange;
+            grid-area: sec4;
+        }
+        section.sec5{
+            @include img("https://i.pinimg.com/736x/62/14/16/6214165392f2091b7445532b95b06b64.jpg", bottom);
+            background-color: purple;
+            grid-area: sec5;
+        }
+        section.sec6{
+            @include img("https://images.unsplash.com/photo-1609216970141-d981d693484a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170", );
+            background-color: salmon;
+            grid-area: sec6;
+        }
+        section.sec7{
+            @include img("https://images.unsplash.com/photo-1581094374631-2154f20c2726?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170", );
+            background-color: pink;
+            grid-area: sec7;
+        }
+        section.sec8{
+            @include img("https://images.unsplash.com/photo-1599277186045-d95624f462f5?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074", );
+            background-color: cyan;
+            grid-area: sec8;
+        }
+        section.sec9{
+            @include img("https://images.unsplash.com/photo-1676721519521-cf9b7a17ae79?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170", );
+            background-color: magenta;
+            grid-area: sec9;
+        }
+        section.sec10{
+            @include img("https://images.unsplash.com/photo-1657214005798-86b35114fc0b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1935", );
+            background-color: brown;
+            grid-area: sec10;
+        }
     }
 }
 
